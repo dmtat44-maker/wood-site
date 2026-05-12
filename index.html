@@ -1,0 +1,485 @@
+<!-- index.html -->
+<!doctype html>
+<html lang="ru">
+<head>
+  <!-- Базовые SEO и адаптивность -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ЛесМаркет — доски, бруски, лаги и изделия из дерева на заказ</title>
+  <meta name="description" content="Продажа и заказ изделий из дерева: доски, бруски, лаги, рейки, обрешётка, пиломатериалы под размер. Быстрый расчёт, доставка, консультация.">
+  <meta name="keywords" content="доски, бруски, лаги, пиломатериалы, изделия из дерева, дерево на заказ, купить доску">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#007BFF">
+
+  <!-- Open Graph для красивой ссылки в соцсетях -->
+  <meta property="og:title" content="ЛесМаркет — изделия из дерева на заказ">
+  <meta property="og:description" content="Доски, бруски, лаги и другие пиломатериалы под ваши размеры.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://dummyimage.com/1200x630/007BFF/ffffff&text=LesMarket">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap 5 CSS через CDN. JS Bootstrap не используем, логика своя на vanilla JS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Основные стили сайта -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <!-- Шапка сайта -->
+  <header class="site-header" id="home">
+    <nav class="navbar navbar-expand-lg fixed-top custom-navbar" aria-label="Главная навигация">
+      <div class="container">
+        <a class="navbar-brand brand" href="#home" aria-label="ЛесМаркет на главную">
+          <span class="brand__mark">Л</span>
+          <span class="brand__text">ЛесМаркет</span>
+        </a>
+
+        <button class="navbar-toggler custom-toggler" type="button" aria-label="Открыть меню" aria-expanded="false" data-nav-toggle>
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <div class="navbar-menu" data-nav-menu>
+          <a href="#home" class="nav-link-custom">Главная</a>
+          <a href="#catalog" class="nav-link-custom">Каталог</a>
+          <a href="#advantages" class="nav-link-custom">Преимущества</a>
+          <a href="#about" class="nav-link-custom">О нас</a>
+          <a href="#contacts" class="nav-link-custom">Контакты</a>
+          <button class="btn btn-primary btn-sm rounded-pill px-4" data-open-modal="orderModal">
+            Заказать
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero-блок -->
+    <section class="hero section-offset">
+      <div class="container">
+        <div class="row align-items-center g-5">
+          <div class="col-lg-6">
+            <div class="hero__content reveal">
+              <p class="eyebrow">Пиломатериалы и изделия из дерева</p>
+              <h1>Доски, бруски, лаги и дерево под ваш размер</h1>
+              <p class="hero__text">
+                Поможем подобрать материал для дачи, стройки, террасы, забора, навеса,
+                мастерской или внутренней отделки. Сделаем быстрый расчёт по объёму и доставке.
+              </p>
+
+              <div class="hero__actions">
+                <a href="#catalog" class="btn btn-primary btn-lg rounded-pill px-4">Смотреть каталог</a>
+                <button class="btn btn-outline-primary btn-lg rounded-pill px-4" data-open-modal="orderModal">
+                  Оставить заявку
+                </button>
+              </div>
+
+              <div class="hero__stats" aria-label="Преимущества в цифрах">
+                <div>
+                  <strong>24 ч</strong>
+                  <span>быстрый расчёт</span>
+                </div>
+                <div>
+                  <strong>30+</strong>
+                  <span>позиций дерева</span>
+                </div>
+                <div>
+                  <strong>ГОСТ</strong>
+                  <span>и сортировка</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6">
+            <!-- SVG вместо тяжёлого изображения: быстрая загрузка -->
+            <div class="hero-card reveal reveal-delay-1" role="img" aria-label="Иллюстрация пиломатериалов">
+              <svg viewBox="0 0 560 420" class="hero-svg" aria-hidden="true">
+                <rect x="0" y="0" width="560" height="420" rx="32" fill="#eef6ff"/>
+                <circle cx="440" cy="85" r="56" fill="#007BFF" opacity="0.16"/>
+                <circle cx="102" cy="335" r="74" fill="#007BFF" opacity="0.12"/>
+                <g transform="translate(95 95)">
+                  <rect x="0" y="190" width="370" height="46" rx="12" fill="#b77935"/>
+                  <rect x="24" y="142" width="370" height="46" rx="12" fill="#d89245"/>
+                  <rect x="0" y="94" width="370" height="46" rx="12" fill="#c57b34"/>
+                  <rect x="24" y="46" width="370" height="46" rx="12" fill="#e6a157"/>
+                  <rect x="0" y="0" width="370" height="46" rx="12" fill="#b96d2d"/>
+                  <path d="M24 22h320" stroke="#7b421d" stroke-width="5" stroke-linecap="round" opacity=".35"/>
+                  <path d="M48 70h310" stroke="#7b421d" stroke-width="5" stroke-linecap="round" opacity=".35"/>
+                  <path d="M28 118h300" stroke="#7b421d" stroke-width="5" stroke-linecap="round" opacity=".35"/>
+                  <path d="M54 166h290" stroke="#7b421d" stroke-width="5" stroke-linecap="round" opacity=".35"/>
+                  <path d="M30 214h310" stroke="#7b421d" stroke-width="5" stroke-linecap="round" opacity=".35"/>
+                </g>
+              </svg>
+
+              <div class="hero-card__badge">
+                <span>от 1 м³</span>
+                <small>заказ и доставка</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </header>
+
+  <main>
+    <!-- Рекламный блок -->
+    <section class="ad-strip" aria-label="Рекламное предложение">
+      <div class="container">
+        <div class="ad-strip__inner reveal">
+          <div>
+            <span class="ad-label">Реклама</span>
+            <h2>Скидка на комплексный заказ для дачи</h2>
+            <p>При заказе доски, лаг и бруса одним комплектом — индивидуальная цена и расчёт доставки.</p>
+          </div>
+          <button class="btn btn-light rounded-pill px-4" data-open-modal="promoModal">
+            Узнать условия
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Каталог -->
+    <section class="section" id="catalog">
+      <div class="container">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Каталог</p>
+          <h2>Популярные позиции</h2>
+          <p>
+            Цены зависят от сечения, сорта, влажности, объёма и доставки.
+            Оставьте заявку — рассчитаем точнее.
+          </p>
+        </div>
+
+        <div class="product-grid">
+          <!-- Карточка товара -->
+          <article class="product-card reveal">
+            <img
+              src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='360' viewBox='0 0 600 360'%3E%3Crect width='600' height='360' fill='%23eef6ff'/%3E%3Crect x='80' y='92' width='440' height='48' rx='12' fill='%23c57b34'/%3E%3Crect x='105' y='154' width='390' height='48' rx='12' fill='%23e6a157'/%3E%3Crect x='80' y='216' width='440' height='48' rx='12' fill='%23b96d2d'/%3E%3Cpath d='M120 116h330M145 178h300M120 240h330' stroke='%237b421d' stroke-width='6' stroke-linecap='round' opacity='.35'/%3E%3C/svg%3E"
+              alt="Обрезная доска для строительства"
+              loading="lazy"
+              class="product-card__img"
+            >
+            <div class="product-card__body">
+              <span class="chip">Хит</span>
+              <h3>Обрезная доска</h3>
+              <p>Для каркаса, настила, черновых работ, опалубки и хозяйственных построек.</p>
+              <ul>
+                <li>Толщина: 25–50 мм</li>
+                <li>Длина: 3–6 м</li>
+                <li>Влажность: естественная / сухая</li>
+              </ul>
+              <button class="btn btn-primary w-100 rounded-pill" data-product="Обрезная доска" data-open-modal="orderModal">
+                Заказать расчёт
+              </button>
+            </div>
+          </article>
+
+          <article class="product-card reveal reveal-delay-1">
+            <img
+              src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='360' viewBox='0 0 600 360'%3E%3Crect width='600' height='360' fill='%23eef6ff'/%3E%3Crect x='145' y='78' width='310' height='70' rx='14' fill='%23b96d2d'/%3E%3Crect x='120' y='164' width='360' height='70' rx='14' fill='%23d89245'/%3E%3Crect x='145' y='250' width='310' height='70' rx='14' fill='%23c57b34'/%3E%3Cpath d='M180 113h230M155 199h285M180 285h230' stroke='%237b421d' stroke-width='7' stroke-linecap='round' opacity='.35'/%3E%3C/svg%3E"
+              alt="Деревянный брусок строганый"
+              loading="lazy"
+              class="product-card__img"
+            >
+            <div class="product-card__body">
+              <span class="chip chip--blue">Под размер</span>
+              <h3>Брусок</h3>
+              <p>Для обрешётки, каркасов, мебели, ремонта, упаковки и декоративных задач.</p>
+              <ul>
+                <li>Сечение: 30×40, 40×50, 50×50</li>
+                <li>Строганый или обычный</li>
+                <li>Резка под размер</li>
+              </ul>
+              <button class="btn btn-primary w-100 rounded-pill" data-product="Брусок" data-open-modal="orderModal">
+                Заказать расчёт
+              </button>
+            </div>
+          </article>
+
+          <article class="product-card reveal reveal-delay-2">
+            <img
+              src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='360' viewBox='0 0 600 360'%3E%3Crect width='600' height='360' fill='%23eef6ff'/%3E%3Crect x='90' y='98' width='420' height='62' rx='12' fill='%23a8642a'/%3E%3Crect x='90' y='200' width='420' height='62' rx='12' fill='%23d89245'/%3E%3Crect x='130' y='160' width='38' height='40' fill='%237b421d' opacity='.35'/%3E%3Crect x='430' y='160' width='38' height='40' fill='%237b421d' opacity='.35'/%3E%3Cpath d='M135 129h330M135 231h330' stroke='%237b421d' stroke-width='6' stroke-linecap='round' opacity='.35'/%3E%3C/svg%3E"
+              alt="Деревянные лаги для пола"
+              loading="lazy"
+              class="product-card__img"
+            >
+            <div class="product-card__body">
+              <span class="chip">Стройка</span>
+              <h3>Лаги</h3>
+              <p>Для пола, настилов, террас, бытовок, хозблоков и каркасных конструкций.</p>
+              <ul>
+                <li>Сечение: 50×100, 50×150, 100×150</li>
+                <li>Подбор шага укладки</li>
+                <li>Можно с антисептированием</li>
+              </ul>
+              <button class="btn btn-primary w-100 rounded-pill" data-product="Лаги" data-open-modal="orderModal">
+                Заказать расчёт
+              </button>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Преимущества -->
+    <section class="section section-muted" id="advantages">
+      <div class="container">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Почему мы</p>
+          <h2>Просто, быстро, понятно</h2>
+        </div>
+
+        <div class="features-grid">
+          <article class="feature-card reveal">
+            <div class="feature-card__icon">01</div>
+            <h3>Расчёт под задачу</h3>
+            <p>Скажете размеры и назначение — подберём сечение, объём, сорт и примерную стоимость.</p>
+          </article>
+
+          <article class="feature-card reveal reveal-delay-1">
+            <div class="feature-card__icon">02</div>
+            <h3>Доставка</h3>
+            <p>Подскажем оптимальную логистику и объединим позиции в один заказ, чтобы не переплачивать.</p>
+          </article>
+
+          <article class="feature-card reveal reveal-delay-2">
+            <div class="feature-card__icon">03</div>
+            <h3>Заказные размеры</h3>
+            <p>Можно рассчитать резку под конкретный проект: настил, забор, каркас, навес или террасу.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Слайдер -->
+    <section class="section">
+      <div class="container">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Примеры применения</p>
+          <h2>Что можно заказать</h2>
+        </div>
+
+        <div class="slider reveal" data-slider>
+          <button class="slider__btn slider__btn--prev" aria-label="Предыдущий слайд" data-slider-prev>‹</button>
+
+          <div class="slider__viewport">
+            <div class="slider__track" data-slider-track>
+              <article class="slide">
+                <h3>Комплект для пола</h3>
+                <p>Лаги, доска, брусок для обрешётки, расходники и расчёт шага.</p>
+              </article>
+
+              <article class="slide">
+                <h3>Материал для забора</h3>
+                <p>Доска, рейка, столбы, прожилины и объём под периметр участка.</p>
+              </article>
+
+              <article class="slide">
+                <h3>Дерево для террасы</h3>
+                <p>Основание, лаги, настил, защитная обработка и запас на подрезку.</p>
+              </article>
+            </div>
+          </div>
+
+          <button class="slider__btn slider__btn--next" aria-label="Следующий слайд" data-slider-next>›</button>
+
+          <div class="slider__dots" aria-label="Навигация по слайдам" data-slider-dots></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- О нас -->
+    <section class="section section-muted" id="about">
+      <div class="container">
+        <div class="row align-items-center g-4">
+          <div class="col-lg-6">
+            <div class="about-card reveal">
+              <p class="eyebrow">О нас</p>
+              <h2>Работаем с частными заказами и небольшими стройками</h2>
+              <p>
+                «ЛесМаркет» — пример современного сайта для компании, которая продаёт
+                пиломатериалы и принимает заявки на изготовление изделий из дерева.
+              </p>
+              <p>
+                Сайт можно адаптировать под реальный бизнес: добавить прайс, фотографии склада,
+                онлайн-оплату, карту доставки, CRM или отправку заявок на почту.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-lg-6">
+            <div class="info-list reveal reveal-delay-1">
+              <div>
+                <strong>Материалы</strong>
+                <span>Доска, брус, брусок, лаги, рейка, обрешётка</span>
+              </div>
+              <div>
+                <strong>Услуги</strong>
+                <span>Подбор, резка, комплектация, доставка</span>
+              </div>
+              <div>
+                <strong>Заказы</strong>
+                <span>Для дачи, ремонта, стройки, террас и хозпостроек</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Контакты и форма -->
+    <section class="section" id="contacts">
+      <div class="container">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Контакты</p>
+          <h2>Оставьте заявку</h2>
+          <p>Заполните форму, и мы подготовим расчёт по материалу, объёму и доставке.</p>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-lg-5">
+            <address class="contact-card reveal">
+              <h3>Связаться с нами</h3>
+              <p><strong>Телефон:</strong> <a href="tel:+70000000000">+7 000 000-00-00</a></p>
+              <p><strong>Email:</strong> <a href="mailto:order@example.ru">order@example.ru</a></p>
+              <p><strong>Адрес:</strong> Ваш город, склад пиломатериалов</p>
+              <p class="small text-muted mb-0">
+                Замените контакты на реальные перед публикацией.
+              </p>
+            </address>
+          </div>
+
+          <div class="col-lg-7">
+            <form class="order-form reveal reveal-delay-1" data-form novalidate>
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <label for="name" class="form-label">Имя *</label>
+                  <input type="text" class="form-control" id="name" name="name" placeholder="Иван" required minlength="2">
+                  <small class="form-error" data-error-for="name"></small>
+                </div>
+
+                <div class="col-md-6">
+                  <label for="phone" class="form-label">Телефон *</label>
+                  <input type="tel" class="form-control" id="phone" name="phone" placeholder="+7 900 000-00-00" required>
+                  <small class="form-error" data-error-for="phone"></small>
+                </div>
+
+                <div class="col-md-6">
+                  <label for="product" class="form-label">Что нужно?</label>
+                  <select class="form-select" id="product" name="product">
+                    <option value="">Выберите позицию</option>
+                    <option>Обрезная доска</option>
+                    <option>Брусок</option>
+                    <option>Лаги</option>
+                    <option>Брус</option>
+                    <option>Другое изделие из дерева</option>
+                  </select>
+                </div>
+
+                <div class="col-md-6">
+                  <label for="volume" class="form-label">Объём, м³</label>
+                  <input type="number" class="form-control" id="volume" name="volume" placeholder="Например, 2" min="0" step="0.1">
+                  <small class="form-error" data-error-for="volume"></small>
+                </div>
+
+                <div class="col-12">
+                  <label for="message" class="form-label">Комментарий</label>
+                  <textarea class="form-control" id="message" name="message" rows="4" placeholder="Укажите размеры, длину, сорт, адрес доставки или задачу"></textarea>
+                </div>
+
+                <div class="col-12">
+                  <label class="form-check">
+                    <input class="form-check-input" type="checkbox" id="agree" name="agree" required>
+                    <span class="form-check-label">
+                      Согласен на обработку данных для связи по заявке *
+                    </span>
+                  </label>
+                  <small class="form-error" data-error-for="agree"></small>
+                </div>
+
+                <div class="col-12">
+                  <button type="submit" class="btn btn-primary btn-lg rounded-pill px-5">
+                    Отправить заявку
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Подвал -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="site-footer__inner">
+        <p>© <span data-year></span> ЛесМаркет. Сайт готов для GitHub Pages.</p>
+        <a href="#home">Наверх ↑</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Модальное окно заявки -->
+  <div class="modal-overlay" id="orderModal" role="dialog" aria-modal="true" aria-labelledby="orderModalTitle" hidden>
+    <div class="custom-modal">
+      <button class="modal-close" type="button" aria-label="Закрыть окно" data-close-modal>×</button>
+      <h2 id="orderModalTitle">Быстрый заказ</h2>
+      <p>Оставьте контакты, и менеджер уточнит размеры, объём и доставку.</p>
+
+      <form class="modal-form" data-modal-form novalidate>
+        <label>
+          Имя *
+          <input type="text" name="modalName" placeholder="Ваше имя" required minlength="2">
+          <small class="form-error" data-error-for="modalName"></small>
+        </label>
+
+        <label>
+          Телефон *
+          <input type="tel" name="modalPhone" placeholder="+7 900 000-00-00" required>
+          <small class="form-error" data-error-for="modalPhone"></small>
+        </label>
+
+        <label>
+          Интересующая позиция
+          <input type="text" name="modalProduct" placeholder="Например, доска 50×150" data-modal-product>
+        </label>
+
+        <button class="btn btn-primary rounded-pill w-100" type="submit">
+          Отправить
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Рекламное модальное окно -->
+  <div class="modal-overlay" id="promoModal" role="dialog" aria-modal="true" aria-labelledby="promoModalTitle" hidden>
+    <div class="custom-modal">
+      <button class="modal-close" type="button" aria-label="Закрыть окно" data-close-modal>×</button>
+      <span class="ad-label">Реклама</span>
+      <h2 id="promoModalTitle">Комплект для дачи выгоднее</h2>
+      <p>
+        При заказе нескольких позиций сразу можно оптимизировать распил, доставку
+        и общий объём. Оставьте заявку — рассчитаем комплект.
+      </p>
+      <button class="btn btn-primary rounded-pill w-100" data-open-modal="orderModal">
+        Перейти к заявке
+      </button>
+    </div>
+  </div>
+
+  <!-- Toast-уведомление -->
+  <div class="toast-message" data-toast hidden>
+    Заявка подготовлена. Подключите отправку на почту или CRM.
+  </div>
+
+  <!-- Основной JS -->
+  <script src="script.js" defer></script>
+</body>
+</html>
